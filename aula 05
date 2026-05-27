@@ -1,0 +1,176 @@
+import 'dart:io';
+
+
+// // 1 — Lista de produtos: 
+// // A) Crie uma lista de produtos com os seguintes itens:
+// // Arroz, Feijão, Macarrão, Leite, Café
+
+// // B) O que deve ser feito:
+// // Criar a lista.
+// // Adicionar mais dois produtos.
+// // Mostrar todos os produtos com forEach.
+// // Mostrar todos os produtos com for, exibindo a posição.
+// // Remover um produto pelo nome.
+// // Remover um produto pelo índice.
+// // Mostrar a quantidade final de produtos.
+// // Verificar se a lista está vazia.
+
+void main (){
+
+List<String> produtos =['Arroz', 'Feijão', 'Macarrão', 'Leite', 'Café'];
+
+produtos.add("Carne");
+produtos.add("Macarrão");
+
+bool Removido = produtos.remove("Carne");
+String RemoverProduto = produtos.removeAt(3);
+
+produtos.forEach((produtos) => print(produtos));
+
+for(int i = 0; i < produtos.length; i++){
+print(i);
+}
+
+if (produtos.isEmpty) {
+print('A lista está vazia.');
+} else {
+print('A lista contém itens.');
+}
+
+print('Quantidade de produtos: ${produtos.length}');
+
+
+}
+
+
+
+// // 2) Uma escola precisa organizar uma lista simples com os nomes dos alunos presentes em uma aula.
+
+// // O programa deve:
+
+// // A) Criar uma lista vazia chamada presentes.
+// // B) Adicionar pelo menos 5 nomes.
+// // C) Exibir todos os nomes com forEach.
+// // D) Exibir os nomes numerados com for.
+// // E) Buscar se um aluno específico está na lista.
+// // F) Remover um aluno que saiu da sala.
+// // G) Mostrar a lista atualizada.
+// // H) Mostrar o total de alunos presentes.
+
+void main() {
+
+List<String> presentes = [];
+presentes.add("ana");
+presentes.add("maria");
+presentes.add("Geo");
+presentes.add("marta");
+presentes.add("bianca");
+
+presentes.forEach((aluno) => print(aluno));
+
+for (int i = 0; i < presentes.length; i++) {
+print('${i + 1}. ${presentes[i]}');
+}
+
+String buscar = 'ana';
+if (presentes.contains(buscar)) {
+print('$buscar está presente na sala.');
+} else {
+print('$buscar não foi encontrado.');
+}
+
+String remover = 'marta';
+bool removido = presentes.remove(remover);
+
+print('Lista atualizada: $presentes');
+
+print('Alunos presentes: ${presentes.length}');
+}
+
+
+// // 3)Crie uma lista de números e use for para imprimir apenas os números pares.
+
+void main() {
+for (int i = 1; i <= 20; i++) {
+if (i % 2 == 0) {
+print(i);
+}
+}
+}
+
+
+// // 4) Crie uma lista de nomes e use forEach para imprimir uma mensagem de boas-vindas para cada nome.
+
+void main() {
+List<String> nomes = ['Carol', 'Geo', 'Gabi', 'Tob'];
+nomes.forEach((nome) => print('Seja bem-vindo(a), $nome!'));
+}
+
+// // 5) Crie uma lista de notas e calcule a média da turma.
+
+void main() {
+List<double> notas = [10, 7.5, 9, 6.0, 5.5];
+double soma = 0.0;
+
+for (double nota in notas) {
+soma += nota;
+}
+double media = soma / notas.length;
+
+print('Notas da turma: $notas');
+print('Total de alunos: ${notas.length}');
+print('Média final da turma: ${media}');
+}
+
+// // 6) Crie uma lista de produtos e remova todos os produtos com nome igual a "Indisponível".
+
+void main() {
+
+List<String> produtos = ['Celular', 'Indisponível', 'Notebook', 'Indisponível', 'Fone de Ouvido'];
+produtos.remove((produto) => produto == 'Indisponível');
+print(produtos); 
+
+}
+
+// // 7) Crie uma lista de idades e conte quantas pessoas têm idade maior ou igual a 18.
+
+void main() {
+List<double> idade = [12, 19, 60, 22, 18, 4];
+
+int maioresdeIdade = 0;
+
+for (int i = 0; i < idade.length; i++) {
+if (idade[i] >= 18){
+maioresdeIdade++;
+}
+}
+
+print ('A quantidade de maiores de idade: $maioresdeIdade');
+}
+
+// // 8) Crie uma lista de palavras e mostre apenas as palavras com mais de 5 letras.
+
+void main() {
+List<String> palavras = ['esmalte', 'sol', 'casar', 'acessorio', 'mesa', 'parado'];
+
+for (int i = 0; i < palavras.length; i++) {
+if (palavras[1].length > 5){
+print (palavras[1]);
+}
+}
+}
+
+
+// // 9) Crie uma lista de preços e aplique um desconto de 10% em todos os valores usando for
+
+void main() {
+List<double> precos = [10, 50, 100, 200, 500];
+
+for (int i = 0; i <precos.length; i++) {
+double precoAtual = precos[i];
+double novoPreco = precoAtual = (precoAtual * 0.10);
+
+print(novoPreco);
+}
+
+}
