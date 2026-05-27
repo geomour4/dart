@@ -1,0 +1,267 @@
+1. Atividade 
+
+// Crie uma classe chamada Produto com os seguintes atributos:
+
+// nome
+// preco
+// quantidade
+
+// Crie um construtor com this.
+
+// Crie um método chamado mostrarDados() que exiba:
+
+// Nome do produto
+// Preço
+// Quantidade
+
+// Crie também um método chamado calcularTotal() que mostre o valor total em estoque:
+
+// preco * quantidade
+
+// No main, crie pelo menos 3 produtos diferentes e chame os métodos.
+
+class Produto{
+String nome;
+double preco;
+int quantidade;
+
+Produto(this.nome,this.preco,this.quantidade);
+void mostrarDados() {
+  print('Produto: ${this.nome}');
+  print('Preço: ${this.preco}');
+  print('Quantidade: ${this.quantidade}');
+}
+
+void calcularTotal() {
+  double total = this.preco * this.quantidade;
+  print('Valor total em estoque: ${total}');
+  }
+}
+void main() {
+Produto prod1 = Produto('Notebook', 3500.00, 5);
+Produto prod2 = Produto('Smartphone', 1800.50, 10);
+Produto prod3 = Produto('Fone Bluetooth', 150.00, 25);
+
+prod1.mostrarDados();
+prod1.calcularTotal();
+
+prod2.mostrarDados();
+prod2.calcularTotal();
+
+prod3.mostrarDados();
+prod3.calcularTotal();
+}
+
+2. Atividade 
+
+// Crie uma atividade com contexto:
+
+// Situação-problema
+
+// Uma escola técnica deseja criar um sistema simples para cadastrar equipamentos do laboratório.
+
+// Cada equipamento deve possuir:
+
+// nome
+// patrimonio
+// laboratorio
+// status
+
+// O aluno deve:
+
+// Criar a classe Equipamento.
+// Criar os atributos.
+// Criar o construtor usando this.
+// Criar um método mostrarDados().
+// Criar 3 objetos no main.
+// Mostrar os dados dos equipamentos no terminal.
+
+// Exemplo de equipamentos:
+
+// Computador
+// Projetor
+// Roteador
+
+class Equipamento {
+
+  String nome;
+  int patrimonio;
+  String laboratorio;
+  String status;
+
+  Equipamento(this.nome, this.patrimonio, this.laboratorio, this.status);
+
+  void mostrarDados() {
+    print('Equipamento: ${this.nome}');
+    print('Patrimônio: ${this.patrimonio}');
+    print('Laboratório: ${this.laboratorio}');
+    print('Status: ${this.status}');
+  }
+}
+
+void main(){
+
+Equipamento prod1 = Equipamento('Lenovo', 123456, 'Maker', 'usando');
+Equipamento prod2 = Equipamento('MacBook', 987654, 'L.O.U.C.O', 'Livre');
+Equipamento prod3 = Equipamento('Samsung', 456789, 'NERD', 'Livre');
+
+prod1.mostrarDados();
+prod2.mostrarDados();
+prod3.mostrarDados();
+
+}
+
+
+// 3. Exercícios 
+
+// Crie uma lista de exercícios para fixação:
+
+// Exercício 1
+
+// Crie uma classe Livro com:
+
+// titulo
+// autor
+// anoPublicacao
+
+// Crie um construtor e um método para exibir os dados do livro.
+
+class Livro {
+  String titulo;
+  String autor;
+  int anoPublicacao;
+
+Livro(this.titulo, this.autor, this.anoPublicacao);
+
+  void mostrarDados(){
+print('Nome do Livro $this.titulo');
+print ('Nome do autor é ${this.autor} do Livro $this.titulo');
+print('O livro foi publicado $this.anoPublicacao');
+ }
+}
+
+void main(){
+Livro mostrar = Livro('A Maldição do Mar', 'Shea Ernshaw', 2018);
+mostrar.mostrarDados();
+}
+
+// 4. Exercício
+
+// Crie uma classe Funcionario com:
+
+// nome
+// cargo
+// salario
+
+// Crie um método chamado mostrarFuncionario().
+
+class Funcionario {
+ String nome;
+ String cargo;
+ double salario;
+
+Funcionario(this.nome, this.cargo, this.salario);
+
+void mostrarFuncionario(){
+  print('O funcionário: ${this.nome}');
+  print('Trabalha no cargo de: ${this.cargo}');
+  print('E ganha em torno de: ${this.salario}');
+
+  }
+}
+
+void main(){
+Funcionario empresa = Funcionario('Antônio', 'software engineering Pleno', 4.556);
+ empresa.mostrarFuncionario();
+}
+
+// 4. Exercício 
+
+// Crie uma classe Personagem com:
+
+// nome
+// vida
+// forca
+
+// Crie um método chamado atacar() que mostre uma mensagem de ataque.
+
+
+class Personagem{
+  String nome;
+  int vida;
+  int forca;
+
+  Personagem(this.nome, this.vida, this.forca);
+
+  void atacar() {
+    print('$nome atacou com força $forca!');
+  }
+
+  void apresentar() {
+    print('PERSONAGEM: $nome');
+    print('VIDA: $vida');
+    print('FORÇA: $forca');
+  }
+}
+void main() { 
+  Personagem mortalKombat = Personagem('Kitana', 1000, 10);
+  mortalKombat.apresentar();
+  mortalKombat.atacar();
+}
+
+
+// 5. Exercício 
+
+// Crie uma classe Celular com:
+
+// marca
+// modelo
+// armazenamento
+
+// Crie 2 objetos e mostre seus dados.
+
+class celular {
+  String marca;
+  String modelo;
+  String armazenamento;
+
+  celular(this.marca, this.modelo, this.armazenamento);
+  void apresentar(){
+    print('Marca: $marca');
+    print('Modelo: $modelo');
+    print('Armazenamento: $armazenamento');
+  }
+}
+
+void main(){
+  celular marca1 = celular('Samsung', 'A35 5G', ' 256 GB');
+  celular marca2 = celular('Iphone', '17 Air', '512 GB');
+
+  marca1.apresentar();
+  marca2.apresentar();
+}
+
+// 6. Exercício 
+
+// Crie uma classe Curso com:
+
+// nome
+// cargaHoraria
+// professor
+
+class Curso {
+  String nome;
+  int CargaHoraria;
+  String professor;
+  Curso(this.nome, this.CargaHoraria, this.professor);
+  void apresentar() {
+    print('Nome: $nome');
+    print('CargaHoraria: $CargaHoraria');
+    print('professor: $professor');
+    print('--------------------');
+  }
+}
+void main() {
+  Curso professor = Curso('Italo', 37, 'Analista de Sistemas e dados');
+  professor.apresentar();
+}
