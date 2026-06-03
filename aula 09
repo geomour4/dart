@@ -1,0 +1,85 @@
+contrato.dart
+
+abstract class Funcionario {
+  String nome;
+  Funcionario(this.nome);
+  double calcularSalario();
+}
+
+class Professor extends Funcionario {
+  int horas;
+  Professor(String nome, this.horas) : super(nome);
+  @override
+  double calcularSalario() {
+    return horas * 50;
+  }
+}
+
+class Coordenador extends Funcionario {
+  Coordenador(String nome) : super(nome);
+
+  @override
+  double calcularSalario() {
+    return 5000;
+  }
+}
+
+class Estagiario extends Funcionario {
+  Estagiario(String nome) : super(nome);
+
+  @override
+  double calcularSalario() {
+    return 1200;
+  }
+}
+
+void main() {
+  List<Funcionario> funcionarios = [
+    Professor('Luiza', 40),
+    Coordenador('Merlinda'),
+    Estagiario('Nicole'),
+  ];
+
+  for (Funcionario funcionario in funcionarios) {
+  print('Funcionário: ${funcionario.nome}');
+  print('Salário: R\$ ${funcionario.calcularSalario()}');
+ }
+}
+
+laboratoriorpg.dart
+
+abstract class Personagem {
+  String nome;
+  Personagem(this.nome);
+  void atacar();
+}
+
+class Mago extends Personagem {
+  Mago(String nome) : super(nome);
+
+  @override
+  void atacar() {
+    print('$nome lançou um feitiço!!!!!!');
+  }
+}
+
+class Guerreiro extends Personagem {
+  Guerreiro(String nome) : super(nome);
+
+  @override
+  void atacar() {
+    print('$nome atacou com sua coragem!!!');
+  }
+}
+
+void main() {
+  List<Personagem> grupo = [
+    Mago('Alvo Dumbledore'),
+    Guerreiro('Harry Potter'),
+    Mago('Voldemort'),
+  ];
+
+  for (int i = 0; i < grupo.length; i++) {
+    grupo[i].atacar();
+  }
+}
