@@ -1,0 +1,84 @@
+abstract class Funcionario {
+  String nome;
+  double salarioBase;
+  String cargo = '';
+  Funcionario(this.nome, this.salarioBase);
+
+  void realizarFuncao();
+
+  void exibirDados() {
+    print('Nome: $nome');
+    print('Cargo: $cargo');
+    print('Salário Base: R\$ $salarioBase');
+  }
+}
+
+class Gerente extends Funcionario {
+  Gerente(String nome, double salarioBase)
+      : super(nome, salarioBase) {
+    cargo = 'Gerente';
+  }
+
+  @override
+  void realizarFuncao() {
+    print('$nome está gerenciando a equipe e analisando metas.');
+  }
+}
+
+class Caixa extends Funcionario {
+  Caixa(String nome, double salarioBase)
+      : super(nome, salarioBase) {
+    cargo = 'Caixa';
+  }
+
+  @override
+  void realizarFuncao() {
+    print('$nome está processando pagamentos e fechando o caixa.');
+  }
+}
+
+class Atendente extends Funcionario {
+  Atendente(String nome, double salarioBase)
+      : super(nome, salarioBase) {
+    cargo = 'Atendente';
+  }
+
+  @override
+  void realizarFuncao() {
+    print('$nome está auxiliando os clientes no salão.');
+  }
+}
+
+class DepositoFuncionarios {
+  List<Funcionario> funcionarios = [];
+
+  void adicionar(Funcionario funcionario) {
+    funcionarios.add(funcionario);
+    print('${funcionario.nome} cadastrado com sucesso!');
+  }
+
+  void listarTodos() {
+    if (funcionarios.isEmpty) {
+      print('Nenhum funcionário cadastrado.');
+      return;
+    }
+
+    print('\n FUNCIONÁRIOS CADASTRADOS ');
+
+    for (var funcionario in funcionarios) {
+      funcionario.exibirDados();
+      funcionario.realizarFuncao();
+    
+    }
+  }
+}
+
+void main() {
+  DepositoFuncionarios deposito = DepositoFuncionarios();
+
+  deposito.adicionar(Gerente('Carlos Silva', 5000));
+  deposito.adicionar(Caixa('Ana Souza', 2500));
+  deposito.adicionar(Atendente('Pedro Santos', 1800));
+
+  deposito.listarTodos();
+}
